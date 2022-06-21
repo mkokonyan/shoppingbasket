@@ -1,0 +1,3 @@
+Username: 32424, Password: 424242, First_name: 234324, Total_balance: 234234.00, Products: []
+Username: mkokonyan, Password: 12345qwe, First_name: Martin, Total_balance: 34234.34, Products: []
+Username: tkk, Password: 12345qwe, First_name: Tanya, Total_balance: 3434.33, Products: []
