@@ -13,10 +13,14 @@ public class Main {
 
         User loggedUser = MainMenuController.showMainMenu(Helpers.getScanner());
 
-        if (loggedUser.getUsername().equals("admin")) {
+        if (loggedUser == null) {
+
+            loggedUser = MainMenuController.showMainMenu(Helpers.getScanner());
+
+        } else if (loggedUser.getUsername().equals("admin")) {
 
             Product product = AdminViewController.showAdminMenu(Helpers.getScanner());
-            System.out.printf("Successfully added %s to shop!\n", product.getName());
+            System.out.printf("\n*** Successfully added %s to shop! ***\n", product.getName());
 
         } else {
 
@@ -25,4 +29,3 @@ public class Main {
         }
     }
 }
-

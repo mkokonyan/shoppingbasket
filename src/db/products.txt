@@ -1,3 +1,4 @@
 ID: 1, Name: TV, Price: 1000.00
 ID: 2, Name: Laptop2000, Price: 2000.00
 ID: 3, Name: product3, Price: 200.00
+ID: 4, Name: Monitor, Price: 100.00

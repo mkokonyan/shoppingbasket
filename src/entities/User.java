@@ -3,6 +3,7 @@ package entities;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class User {
 
@@ -69,10 +70,13 @@ public class User {
         return Collections.unmodifiableList(productList);
     }
 
+    public String getProductsAsString() {
+        return Collections.unmodifiableList(productList).stream().map(Product::getName).collect(Collectors.joining("-"));
+    }
+
     public void addProduct(Product product) {
         this.productList.add(product);
     }
-
 
 
     @Override

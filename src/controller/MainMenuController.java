@@ -21,7 +21,7 @@ public class MainMenuController {
             case 1 -> {
                 Map<String, String> userLoginData = MainMenuView.loginMenu(scanner);
 
-                user = UserService.login(userLoginData);
+                user = UserService. login(userLoginData);
 
                 LoggedUserRepo.persistLoggedUser(user);
             }

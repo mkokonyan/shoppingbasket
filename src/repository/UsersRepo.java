@@ -13,17 +13,9 @@ public class UsersRepo {
     public static void addNewUser(User user) {
         File file = new File(USERS_DB_PATH);
 
-        try {
-            FileWriter writer = new FileWriter(file, true);
-
-            writer.write(String.format("Username: %s, Password: %s, First_name: %s, Total_balance: %.2f, Products: %s\n",
-                    user.getUsername(),user.getPassword(), user.getFirstName(), user.getTotalBalance(), user.getProductList()));
-            writer.close();
-
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
+        saveUser(user, file);
     }
+
 
     public static Map<String, User> readAllUsers() throws IOException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
         Map<String, User> usersMap = new LinkedHashMap<>();
@@ -33,8 +25,9 @@ public class UsersRepo {
         BufferedReader bReader = new BufferedReader(fReader);
 
         String line;
-        while((line = bReader.readLine()) != null) {
-            String [] userData = line.split(", ");
+        while ((line = bReader.readLine()) != null) {
+
+            String[] userData = line.split(", ");
             Map<String, String> userMap = new LinkedHashMap<>();
 
             for (String data : userData) {
@@ -48,7 +41,7 @@ public class UsersRepo {
             User user = (User) userAsObj.getClass()
                     .getConstructor(String.class, String.class, String.class, double.class)
                     .newInstance(
-                            userMap.get("Username"), userMap.get("Password"), userMap.get("First_name"), Double.parseDouble( userMap.get("Total_balance")));
+                            userMap.get("Username"), userMap.get("Password"), userMap.get("First_name"), Double.parseDouble(userMap.get("Total_balance")));
 
             usersMap.put(user.getUsername(), user);
 
@@ -63,6 +56,29 @@ public class UsersRepo {
         Map<String, User> usersMap = UsersRepo.readAllUsers();
 
         return usersMap.get(username);
+    }
+
+    public static void updateUsers(Map<String, User> users) throws IOException {
+        File file = new File(USERS_DB_PATH);
+
+        new FileWriter(USERS_DB_PATH, false).close();
+
+        for (User userValue : users.values()) {
+            saveUser(userValue, file);
+        }
+    }
+
+    private static void saveUser(User user, File file) {
+        try {
+            FileWriter writer = new FileWriter(file, true);
+
+            writer.write(String.format("Username: %s, Password: %s, First_name: %s, Total_balance: %.2f, Products: [%s]\n",
+                    user.getUsername(), user.getPassword(), user.getFirstName(), user.getTotalBalance(), user.getProductsAsString()));
+            writer.close();
+
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
     }
 
 

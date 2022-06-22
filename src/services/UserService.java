@@ -89,5 +89,9 @@ public class UserService {
         return loggedUser.getProductList();
     }
 
+    public static void updateUsers (Map<String, User> users) throws IOException {
+        UsersRepo.updateUsers(users);
+    }
+
 
 }

@@ -11,7 +11,7 @@ public class PurchaseService {
         double newBalance = loggedUser.getTotalBalance() - productToAdd.getPrice();
 
         if (newBalance < 0) {
-            System.out.println("You can't afford this product");
+            System.out.println("\nYou can't afford this product");
         } else {
             loggedUser.setTotalBalance(newBalance);
 
