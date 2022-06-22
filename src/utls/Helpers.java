@@ -1,4 +1,4 @@
-package Utls;
+package utls;
 
 import java.util.Scanner;
 
@@ -12,5 +12,14 @@ public class Helpers {
         System.out.println();
         System.out.println("*** " + ex.getMessage() + " ***");
         System.out.println("Please try again");
+    }
+
+    public static int getOptionIndex(Scanner scanner, int[] validOptions) {
+        try {
+            int optionIndex = Integer.parseInt(scanner.nextLine()) - 1;
+            return validOptions[optionIndex];
+        } catch (IllegalArgumentException ex) {
+            return -1;
+        }
     }
 }

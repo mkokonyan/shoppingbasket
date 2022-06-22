@@ -13,7 +13,6 @@ public class RegisterValidators {
         if (users.containsKey(username)) {
             throw new IllegalArgumentException("Username already exists");
         }
-
     }
 
     public static void validatePassword(String password, String repeatPassword) {
@@ -30,7 +29,7 @@ public class RegisterValidators {
             throw new IllegalArgumentException("Password must not have whitespace characters");
         }
         if (!password.equals(repeatPassword)) {
-            throw new IllegalArgumentException("Passwords do not match. Try again");
+            throw new IllegalArgumentException("Passwords do not match");
         }
     }
 

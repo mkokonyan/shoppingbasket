@@ -1,6 +1,6 @@
 package service;
 
-import Utls.Helpers;
+import utls.Helpers;
 import entities.User;
 import repository.UsersRepo;
 import service.validators.LoginValidators;

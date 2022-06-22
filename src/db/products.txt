@@ -1,0 +1,6 @@
+Name: TV, Price: 1000.00
+Name: Laptop, Price: 4346.00
+Name: product, Price: 1.00
+Name: product2, Price: 100.00
+Name: product3, Price: 10.00
+Name: product4, Price: 3.00

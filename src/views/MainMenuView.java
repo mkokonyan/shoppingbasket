@@ -1,11 +1,13 @@
 package views;
 
+import utls.Helpers;
+
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
 
 public class MainMenuView {
-    public static int mainMenuView(Scanner scanner) {
+    public static int mainMenu(Scanner scanner) {
         int[] validOptions = new int[] {1, 2, 3};
 
         System.out.println("\nMain menu:");
@@ -14,24 +16,21 @@ public class MainMenuView {
         System.out.println("\t3) Exit");
         System.out.print("Choose an option: ");
 
-        try {
-            int optionIndex = Integer.parseInt(scanner.nextLine()) - 1;
-            return validOptions[optionIndex];
-        } catch (IllegalArgumentException ex) {
-            return -1;
-        }
+        return Helpers.getOptionIndex(scanner, validOptions);
     }
+
+
 
     public static Map<String, String> loginMenu(Scanner scanner) {
         Map<String, String> userLoginData = new LinkedHashMap<>();
 
         System.out.println("\nLogin as:");
 
-        System.out.print("Enter your username: ");
+        System.out.print("\tEnter your username: ");
         String username = scanner.nextLine();
         userLoginData.put("Username", username);
 
-        System.out.print("Enter password: ");
+        System.out.print("\tEnter password: ");
         String password = scanner.nextLine();
         userLoginData.put("Password", password);
 
@@ -45,25 +44,25 @@ public class MainMenuView {
 
         System.out.println("\nRegister form:");
 
-        System.out.print("Enter your username: ");
+        System.out.print("\tEnter your username: ");
         String username = scanner.nextLine();
         userRegisterData.put("Username", username);
 
-        System.out.print("Enter password: ");
+        System.out.print("\tEnter password: ");
         String password = scanner.nextLine();
         userRegisterData.put("Password", password);
 
-        System.out.print("Confirm password: ");
+        System.out.print("\tConfirm password: ");
         String repeatedPassword = scanner.nextLine();
         userRegisterData.put("Repeated_Password", repeatedPassword);
 
 
-        System.out.print("Enter your first name: ");
+        System.out.print("\tEnter your first name: ");
         String firstName = scanner.nextLine();
         userRegisterData.put("First_name", firstName);
 
 
-        System.out.print("Total balance: ");
+        System.out.print("\t Enter your total balance: ");
         String totalBalance = scanner.nextLine();
         userRegisterData.put("Total_balance", totalBalance);
 

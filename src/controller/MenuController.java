@@ -11,29 +11,29 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
 import java.util.Scanner;
 
-public class ShowMainMenu {
-    public static void showMainMenu(Scanner scanner) throws IOException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
-        int option = MainMenuView.mainMenuView(scanner);
+public class MenuController {
+    public static User showMainMenu(Scanner scanner) throws IOException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
+
+        User user = null;
+        int option = MainMenuView.mainMenu(scanner);
         switch (option) {
 
             case 1 -> {
                 Map<String, String> userLoginData = MainMenuView.loginMenu(scanner);
 
-                User loggedUser = Authentication.login(userLoginData);
+                user = Authentication.login(userLoginData);
 
-                LoggedUserRepo.persistLoggedUser(loggedUser);
-
+                LoggedUserRepo.persistLoggedUser(user);
             }
 
             case 2 -> {
                 Map<String, String> userToRegisterData = MainMenuView.registerMenu(scanner);
 
-                User user = Authentication.register(userToRegisterData);
+                user = Authentication.register(userToRegisterData);
 
                 UsersRepo.addNewUser(user);
 
                 LoggedUserRepo.persistLoggedUser(user);
-
             }
 
             case 3 ->  System.exit(0);
@@ -44,6 +44,7 @@ public class ShowMainMenu {
                 showMainMenu(scanner);
             }
         }
-    }
 
+        return user;
+    }
 }
