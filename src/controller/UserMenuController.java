@@ -9,16 +9,16 @@ import views.UserMenuView;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class UserMenuController {
     public static User showUserMenu(Scanner scanner) throws IOException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
 
         User loggedUser = UserService.getLoggedUser();
         Map<String, User> usersAsMap = UserService.getUsersAsMap();
-
-        System.out.println(usersAsMap);
 
         int option = UserMenuView.userMenu(scanner);
 
@@ -31,17 +31,34 @@ public class UserMenuController {
 
             case 2 -> {
                 System.out.print("Please enter product ID ");
+
                 int productIdToAdd = Integer.parseInt(scanner.nextLine());
+
                 Product productToAdd = ProductService.getAllProductsAsList().stream().filter(e -> e.getId() == productIdToAdd).findFirst().get();
 
-                PurchaseService.addProductToBasket(loggedUser, productToAdd);
+                User updatedUser = PurchaseService.addProductToBasket(loggedUser, productToAdd);
 
                 showUserMenu(scanner);
-//
+
             }
 
             case 3 -> {
+                List<Product> productsList = UserService.getAllProductsInBasket(loggedUser);
 
+                if (!productsList.isEmpty()) {
+                    System.out.println("\nCurrently added products in basket\n");
+                    System.out.println(productsList.stream()
+                            .map(Product::getName)
+                            .collect(Collectors.joining(", ")));
+                    System.out.printf("\nTotal ammount: %s\n", productsList.stream()
+                            .map(Product::getPrice)
+                            .mapToDouble(e->e)
+                            .sum());
+                } else {
+                    System.out.println("\nYou do not have purchased items yet");
+                }
+
+                showUserMenu(scanner);
             }
 
             case 4 -> {

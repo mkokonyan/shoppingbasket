@@ -61,6 +61,10 @@ public class User {
         return totalBalance;
     }
 
+    public void setTotalBalance(double totalBalance) {
+        this.totalBalance = totalBalance;
+    }
+
     public List<Product> getProductList() {
         return Collections.unmodifiableList(productList);
     }
@@ -68,6 +72,8 @@ public class User {
     public void addProduct(Product product) {
         this.productList.add(product);
     }
+
+
 
     @Override
     public String toString() {

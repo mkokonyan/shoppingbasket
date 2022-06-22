@@ -1,5 +1,6 @@
 package services;
 
+import entities.Product;
 import repository.LoggedUserRepo;
 import utls.Helpers;
 import entities.User;
@@ -82,6 +83,10 @@ public class UserService {
         UsersRepo.readAllUsers().forEach((key, value) -> usersMap.putIfAbsent(value.getUsername(), value));
 
         return usersMap;
+    }
+
+    public static List<Product> getAllProductsInBasket (User loggedUser) {
+        return loggedUser.getProductList();
     }
 
 
