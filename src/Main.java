@@ -15,7 +15,7 @@ public class Main {
 
         if (loggedUser == null) {
 
-            loggedUser = MainMenuController.showMainMenu(Helpers.getScanner());
+            MainMenuController.showMainMenu(Helpers.getScanner());
 
         } else if (loggedUser.getUsername().equals("admin")) {
 
@@ -26,7 +26,7 @@ public class Main {
 
         } else {
 
-            User user = UserMenuController.showUserMenu(Helpers.getScanner());
+            UserMenuController.showUserMenu(Helpers.getScanner());
 
         }
     }

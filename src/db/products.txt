@@ -11,3 +11,4 @@ ID: 10, Name: Scanner, Price: 200.00
 ID: 11, Name: SoundSystem, Price: 250.00
 ID: 12, Name: Joystick, Price: 40.00
 ID: 13, Name: Chair, Price: 550.00
+ID: 14, Name: Gamepad, Price: 120.00
