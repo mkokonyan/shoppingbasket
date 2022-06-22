@@ -1,12 +1,10 @@
 package views;
 
-import entities.User;
-
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class MainMenu {
+public class MainMenuView {
     public static int mainMenuView(Scanner scanner) {
         System.out.println("\nMain menu:");
         System.out.println("\t1) Log in");
@@ -23,6 +21,9 @@ public class MainMenu {
 
     public static Map<String, String> registerMenu(Scanner scanner) {
         Map<String, String> userRegisterData = new LinkedHashMap<>();
+
+
+        System.out.println("\nRegister form:");
 
         System.out.print("Enter your username: ");
         String username = scanner.nextLine();

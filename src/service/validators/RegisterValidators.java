@@ -1,6 +1,20 @@
 package service.validators;
 
+import entities.User;
+
+import java.util.Map;
+
 public class RegisterValidators {
+
+    public static void validateUsername (Map<String, User> users, String username) {
+        if (username.length() < 3) {
+            throw new IllegalArgumentException("Username must be at least 3 symbols");
+        }
+        if (users.containsKey(username)) {
+            throw new IllegalArgumentException("Username already exists");
+        }
+
+    }
 
     public static void validatePassword(String password, String repeatPassword) {
         if (password.length() < 8) {
@@ -16,9 +30,21 @@ public class RegisterValidators {
             throw new IllegalArgumentException("Password must not have whitespace characters");
         }
         if (!password.equals(repeatPassword)) {
-            throw new IllegalArgumentException("Password do not match. Try again");
+            throw new IllegalArgumentException("Passwords do not match. Try again");
         }
-
     }
 
+    public static void validateFirstName(String name) {
+        if (name.length() < 3) {
+            throw new IllegalArgumentException("Name must be at least 3 symbols");
+        }
+    }
+
+    public static double validateTotalBalance(String totalBalance) {
+        try {
+             return Double.parseDouble(totalBalance);
+        } catch (Exception ex) {
+            throw new IllegalArgumentException("Please enter valid balance");
+        }
+    }
 }
