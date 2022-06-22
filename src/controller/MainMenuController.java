@@ -3,7 +3,7 @@ package controller;
 import entities.User;
 import repository.LoggedUserRepo;
 import repository.UsersRepo;
-import services.AuthenticationService;
+import services.UserService;
 import views.MainMenuView;
 
 import java.io.IOException;
@@ -21,7 +21,7 @@ public class MainMenuController {
             case 1 -> {
                 Map<String, String> userLoginData = MainMenuView.loginMenu(scanner);
 
-                user = AuthenticationService.login(userLoginData);
+                user = UserService.login(userLoginData);
 
                 LoggedUserRepo.persistLoggedUser(user);
             }
@@ -29,7 +29,7 @@ public class MainMenuController {
             case 2 -> {
                 Map<String, String> userToRegisterData = MainMenuView.registerMenu(scanner);
 
-                user = AuthenticationService.register(userToRegisterData);
+                user = UserService.register(userToRegisterData);
 
                 UsersRepo.addNewUser(user);
 

@@ -18,7 +18,7 @@ public class Helpers {
         try {
             int optionIndex = Integer.parseInt(scanner.nextLine()) - 1;
             return validOptions[optionIndex];
-        } catch (IllegalArgumentException ex) {
+        } catch (IllegalArgumentException | ArrayIndexOutOfBoundsException ex) {
             return -1;
         }
     }

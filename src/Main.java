@@ -20,7 +20,7 @@ public class Main {
 
         } else {
 
-//            UserMenuController.showUserMenu(Helpers.getScanner());
+            User user = UserMenuController.showUserMenu(Helpers.getScanner());
 
         }
     }

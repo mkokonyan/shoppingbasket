@@ -1,5 +1,6 @@
 package services;
 
+import repository.LoggedUserRepo;
 import utls.Helpers;
 import entities.User;
 import repository.UsersRepo;
@@ -10,9 +11,9 @@ import views.MainMenuView;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
-import java.util.Map;
+import java.util.*;
 
-public class AuthenticationService {
+public class UserService {
 
     public static User login(Map<String, String> userLoginData) throws IOException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
         Map<String, User> usersMap = UsersRepo.readAllUsers();
@@ -29,7 +30,7 @@ public class AuthenticationService {
 
             userLoginData = MainMenuView.loginMenu(Helpers.getScanner());
 
-            return AuthenticationService.login(userLoginData);
+            return UserService.login(userLoginData);
         }
 
         return UsersRepo.findUserByUsername(username);
@@ -60,10 +61,27 @@ public class AuthenticationService {
 
            userToRegisterData = MainMenuView.registerMenu(Helpers.getScanner());
 
-           return AuthenticationService.register(userToRegisterData);
+           return UserService.register(userToRegisterData);
         }
 
         return new User(username, password, firstName, totalBalance);
+    }
+
+
+    public static User getLoggedUser() throws IOException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
+        String loggedUsername = LoggedUserRepo.readLoggedUsername();
+
+        Map<String, User> usersMap = UsersRepo.readAllUsers();
+
+        return usersMap.get(loggedUsername);
+    }
+
+    public static Map<String, User> getUsersAsMap() throws IOException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
+        Map<String, User> usersMap = new LinkedHashMap<>();
+
+        UsersRepo.readAllUsers().forEach((key, value) -> usersMap.putIfAbsent(value.getUsername(), value));
+
+        return usersMap;
     }
 
 

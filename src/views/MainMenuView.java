@@ -24,7 +24,7 @@ public class MainMenuView {
     public static Map<String, String> loginMenu(Scanner scanner) {
         Map<String, String> userLoginData = new LinkedHashMap<>();
 
-        System.out.println("\nLogin as:");
+        System.out.println("\nLogin:");
 
         System.out.print("\tEnter your username: ");
         String username = scanner.nextLine();

@@ -26,7 +26,7 @@ public class UsersRepo {
     }
 
     public static Map<String, User> readAllUsers() throws IOException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
-        Map<String, User> usersMap = new HashMap<>();
+        Map<String, User> usersMap = new LinkedHashMap<>();
 
         File file = new File(USERS_DB_PATH);
         FileReader fReader = new FileReader(file);
@@ -64,5 +64,7 @@ public class UsersRepo {
 
         return usersMap.get(username);
     }
+
+
 }
 

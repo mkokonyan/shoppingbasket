@@ -2,9 +2,11 @@ package repository;
 
 import entities.User;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
+import java.lang.reflect.InvocationTargetException;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class LoggedUserRepo {
     public static final String LOGGED_USER_DB_PATH = "src\\db\\logged_user.txt";
@@ -25,4 +27,18 @@ public class LoggedUserRepo {
         System.out.printf("\n*** Welcome %s ***\n", user.getUsername());
     }
 
+
+    public static String readLoggedUsername() throws IOException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
+        Map<String, User> usersMap = new HashMap<>();
+
+        File file = new File(LOGGED_USER_DB_PATH);
+        FileReader fReader = new FileReader(file);
+        BufferedReader bReader = new BufferedReader(fReader);
+
+        String line = bReader.readLine();
+
+        fReader.close();
+
+        return line;
+    }
 }

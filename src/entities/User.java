@@ -65,8 +65,8 @@ public class User {
         return Collections.unmodifiableList(productList);
     }
 
-    public void setProductList(List<Product> productList) {
-        this.productList = productList;
+    public void addProduct(Product product) {
+        this.productList.add(product);
     }
 
     @Override
