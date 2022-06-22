@@ -3,6 +3,7 @@ package service;
 import Utls.Helpers;
 import entities.User;
 import repository.UsersRepo;
+import service.validators.LoginValidators;
 import service.validators.RegisterValidators;
 import views.MainMenuView;
 
@@ -13,11 +14,30 @@ import java.util.Map;
 
 public class Authentication {
 
-    public static void login() {
+    public static User login(Map<String, String> userLoginData) throws IOException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
+        Map<String, User> usersMap = UsersRepo.readAllUsers();
+
+        String username = userLoginData.get("Username");
+        String password = userLoginData.get("Password");
+
+        try {
+            LoginValidators.validateCredentials(usersMap, username, password);
+
+        } catch (IllegalArgumentException ex) {
+
+            Helpers.printErrorMessage(ex);
+
+            userLoginData = MainMenuView.loginMenu(Helpers.getScanner());
+
+            return Authentication.login(userLoginData);
+        }
+
+        return UsersRepo.findUserByUsername(username);
+
     }
 
     public static User register(Map<String, String> userToRegisterData) throws IOException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
-        Map<String, User> usersMap = UsersRepo.readUsers();
+        Map<String, User> usersMap = UsersRepo.readAllUsers();
 
         String username = userToRegisterData.get("Username");
         String password = userToRegisterData.get("Password");
@@ -26,6 +46,7 @@ public class Authentication {
         String totalBalanceAsString = userToRegisterData.get("Total_balance");
 
         double totalBalance = 0;
+
         try {
 
             RegisterValidators.validateUsername(usersMap, username);
@@ -39,7 +60,7 @@ public class Authentication {
 
            userToRegisterData = MainMenuView.registerMenu(Helpers.getScanner());
 
-           User user = Authentication.register(userToRegisterData);
+           return Authentication.register(userToRegisterData);
         }
 
         return new User(username, password, firstName, totalBalance);

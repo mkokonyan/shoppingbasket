@@ -6,6 +6,8 @@ import java.util.Scanner;
 
 public class MainMenuView {
     public static int mainMenuView(Scanner scanner) {
+        int[] validOptions = new int[] {1, 2, 3};
+
         System.out.println("\nMain menu:");
         System.out.println("\t1) Log in");
         System.out.println("\t2) Register");
@@ -13,11 +15,29 @@ public class MainMenuView {
         System.out.print("Choose an option: ");
 
         try {
-            return Integer.parseInt(scanner.nextLine());
+            int optionIndex = Integer.parseInt(scanner.nextLine()) - 1;
+            return validOptions[optionIndex];
         } catch (IllegalArgumentException ex) {
             return -1;
         }
     }
+
+    public static Map<String, String> loginMenu(Scanner scanner) {
+        Map<String, String> userLoginData = new LinkedHashMap<>();
+
+        System.out.println("\nLogin as:");
+
+        System.out.print("Enter your username: ");
+        String username = scanner.nextLine();
+        userLoginData.put("Username", username);
+
+        System.out.print("Enter password: ");
+        String password = scanner.nextLine();
+        userLoginData.put("Password", password);
+
+        return userLoginData;
+    }
+
 
     public static Map<String, String> registerMenu(Scanner scanner) {
         Map<String, String> userRegisterData = new LinkedHashMap<>();

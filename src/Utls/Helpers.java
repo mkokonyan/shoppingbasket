@@ -13,6 +13,4 @@ public class Helpers {
         System.out.println("*** " + ex.getMessage() + " ***");
         System.out.println("Please try again");
     }
-
-
 }

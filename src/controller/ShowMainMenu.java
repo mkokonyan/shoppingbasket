@@ -1,6 +1,7 @@
 package controller;
 
 import entities.User;
+import repository.LoggedUserRepo;
 import repository.UsersRepo;
 import service.Authentication;
 import views.MainMenuView;
@@ -16,7 +17,12 @@ public class ShowMainMenu {
         switch (option) {
 
             case 1 -> {
-                Authentication.login();
+                Map<String, String> userLoginData = MainMenuView.loginMenu(scanner);
+
+                User loggedUser = Authentication.login(userLoginData);
+
+                LoggedUserRepo.persistLoggedUser(loggedUser);
+
             }
 
             case 2 -> {
@@ -24,15 +30,20 @@ public class ShowMainMenu {
 
                 User user = Authentication.register(userToRegisterData);
 
-                UsersRepo.writeToDB(user);
+                UsersRepo.addNewUser(user);
+
+                LoggedUserRepo.persistLoggedUser(user);
+
             }
 
             case 3 ->  System.exit(0);
 
             default -> {
                 System.out.print("\nPlease enter a number between 1 to 3\n");
+
                 showMainMenu(scanner);
             }
         }
     }
+
 }
