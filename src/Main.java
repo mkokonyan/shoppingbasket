@@ -19,8 +19,10 @@ public class Main {
 
         } else if (loggedUser.getUsername().equals("admin")) {
 
-            Product product = AdminViewController.showAdminMenu(Helpers.getScanner());
-            System.out.printf("\n*** Successfully added %s to shop! ***\n", product.getName());
+           while (true) {
+               Product product = AdminViewController.showAdminMenu(Helpers.getScanner());
+               System.out.printf("\n*** Successfully added %s to shop! ***\n", product.getName());
+           }
 
         } else {
 

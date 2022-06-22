@@ -30,7 +30,6 @@ public class AdminViewController {
             default -> {
                 System.out.print("\nPlease enter a number between 1 to 2\n");
 
-                showAdminMenu(scanner);
             }
         }
 

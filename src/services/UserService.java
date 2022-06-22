@@ -13,6 +13,7 @@ import views.MainMenuView;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class UserService {
 
@@ -60,9 +61,9 @@ public class UserService {
 
             Helpers.printErrorMessage(ex);
 
-           userToRegisterData = MainMenuView.registerMenu(Helpers.getScanner());
+            userToRegisterData = MainMenuView.registerMenu(Helpers.getScanner());
 
-           return UserService.register(userToRegisterData);
+            return UserService.register(userToRegisterData);
         }
 
         return new User(username, password, firstName, totalBalance);
@@ -85,12 +86,62 @@ public class UserService {
         return usersMap;
     }
 
-    public static List<Product> getAllProductsInBasket (User loggedUser) {
+    public static List<Product> getAllProductsInBasket(User loggedUser) {
         return loggedUser.getProductList();
     }
 
-    public static void updateUsers (Map<String, User> users) throws IOException {
+    public static void updateUsers(Map<String, User> users) throws IOException {
         UsersRepo.updateUsers(users);
+    }
+
+    public static User getUpdatedUser(User loggedUser, int productIdToAdd) throws IOException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
+        List<Product> productsList = ProductService.getAllProductsAsList();
+
+        int productsCount = productsList.size();
+
+        Product productToAdd = null;
+
+        try {
+            productToAdd = productsList.stream().filter(e -> e.getId() == productIdToAdd).findFirst().get();
+            return PurchaseService.addProductToBasket(loggedUser, productToAdd);
+
+        } catch (NoSuchElementException ex) {
+            System.out.printf("\nPlease enter a number between 1 and %d\n", productsCount);
+            return loggedUser;
+        }
+    }
+
+    public static void getProductsInfo(List<Product> productsList) {
+        if (!productsList.isEmpty()) {
+            System.out.println("\nCurrently added products in basket:");
+            System.out.println(productsList.stream()
+                    .map(Product::getName)
+                    .collect(Collectors.joining(", ")));
+            System.out.printf("Total amount: %s\n", productsList.stream()
+                    .map(Product::getPrice)
+                    .mapToDouble(e -> e)
+                    .sum());
+        } else {
+            System.out.println("\n*** You do not have purchased items yet ***");
+        }
+    }
+
+    public static void getUserBalance(User loggedUser) {
+        System.out.printf("\n*** Your current balance is %.2f ***\n", loggedUser.getTotalBalance());
+    }
+
+    public static void makePurchase(User loggedUser, Map<String, User> usersAsMap) throws IOException {
+        if (!loggedUser.getProductList().isEmpty()) {
+            usersAsMap.put(loggedUser.getUsername(), loggedUser);
+            UserService.updateUsers(usersAsMap);
+            System.out.println("\n*** You successfully made purchase! ***");
+        } else {
+            System.out.println("\n*** Your basket is empty! ***");
+        }
+    }
+
+    public static void getAllProducts() throws IOException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
+        System.out.println("\n" + ProductService.getAllProducts());
     }
 
 
