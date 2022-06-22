@@ -9,3 +9,4 @@ Username: mkk, Password: 12345qwe, First_name: m, Total_balance: 34.00, Products
 Username: Ivan, Password: 12345qwe, First_name: ivan, Total_balance: 589.00, Products: []
 Username: Jordan, Password: 12345qwe, First_name: Jordan, Total_balance: 124.00, Products: []
 Username: tihomir, Password: 12345wqe, First_name: tihomir, Total_balance: 246.00, Products: []
+Username: newname, Password: 12345wqe, First_name: name, Total_balance: 3050.00, Products: []

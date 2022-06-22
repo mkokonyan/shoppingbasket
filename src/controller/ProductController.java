@@ -1,7 +1,7 @@
 package controller;
 
 import entities.Product;
-import service.ProductManager;
+import services.ProductService;
 import views.AdminMenuView;
 
 import java.io.IOException;
@@ -21,7 +21,7 @@ public class ProductController {
             case 1 -> {
                 Map<String, String> productData = AdminMenuView.productAddMenu(scanner);
 
-                product = ProductManager.addToShop(productData);
+                product = ProductService.addToShop(productData);
 
             }
 

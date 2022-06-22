@@ -62,7 +62,7 @@ public class MainMenuView {
         userRegisterData.put("First_name", firstName);
 
 
-        System.out.print("\t Enter your total balance: ");
+        System.out.print("\tEnter your total balance: ");
         String totalBalance = scanner.nextLine();
         userRegisterData.put("Total_balance", totalBalance);
 

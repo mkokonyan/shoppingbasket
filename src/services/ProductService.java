@@ -1,16 +1,16 @@
-package service;
+package services;
 
 import controller.ProductController;
 import entities.Product;
 import repository.ProductsRepo;
-import service.validators.ProductValidators;
+import services.validators.ProductValidators;
 import utls.Helpers;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
 
-public class ProductManager {
+public class ProductService {
     public static Product addToShop(Map<String, String> productData) throws IOException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
         Map<String, Product> productsMap = ProductsRepo.readAllProducts();
 

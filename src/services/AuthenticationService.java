@@ -1,10 +1,10 @@
-package service;
+package services;
 
 import utls.Helpers;
 import entities.User;
 import repository.UsersRepo;
-import service.validators.LoginValidators;
-import service.validators.RegisterValidators;
+import services.validators.LoginValidators;
+import services.validators.RegisterValidators;
 import views.MainMenuView;
 
 
@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
 
-public class Authentication {
+public class AuthenticationService {
 
     public static User login(Map<String, String> userLoginData) throws IOException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
         Map<String, User> usersMap = UsersRepo.readAllUsers();
@@ -29,7 +29,7 @@ public class Authentication {
 
             userLoginData = MainMenuView.loginMenu(Helpers.getScanner());
 
-            return Authentication.login(userLoginData);
+            return AuthenticationService.login(userLoginData);
         }
 
         return UsersRepo.findUserByUsername(username);
@@ -60,7 +60,7 @@ public class Authentication {
 
            userToRegisterData = MainMenuView.registerMenu(Helpers.getScanner());
 
-           return Authentication.register(userToRegisterData);
+           return AuthenticationService.register(userToRegisterData);
         }
 
         return new User(username, password, firstName, totalBalance);

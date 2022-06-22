@@ -1,4 +1,4 @@
-package service.validators;
+package services.validators;
 
 import entities.Product;
 
