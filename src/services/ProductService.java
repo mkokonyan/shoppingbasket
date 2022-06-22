@@ -30,7 +30,9 @@ public class ProductService {
             return ProductController.showAdminMenu(Helpers.getScanner());
 
         }
+        Product product = new Product(name, price);
 
-        return new Product(name, price);
+        ProductsRepo.addNewProduct(product);
+        return product;
     }
 }

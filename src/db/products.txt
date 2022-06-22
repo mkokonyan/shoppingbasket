@@ -4,3 +4,5 @@ Name: product, Price: 1.00
 Name: product2, Price: 100.00
 Name: product3, Price: 10.00
 Name: product4, Price: 3.00
+Name: product5, Price: 5.00
+Name: product6, Price: 5.00

@@ -17,8 +17,6 @@ public class Main {
 
             Product product = ProductController.showAdminMenu(Helpers.getScanner());
 
-            ProductsRepo.addNewProduct(product);
-
 
 
 
