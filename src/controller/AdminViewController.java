@@ -9,7 +9,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
 import java.util.Scanner;
 
-public class ProductController {
+public class AdminViewController {
 
     public static Product showAdminMenu(Scanner scanner) throws IOException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
 

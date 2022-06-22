@@ -9,16 +9,21 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class ProductsRepo {
+
     public static final String PRODUCTS_DB_PATH = "src\\db\\products.txt";
 
-    public static void addNewProduct(Product product) {
+    public static void addNewProduct(Product product) throws IOException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
+        int productsCount = readAllProducts().size();
+        int nextID = productsCount + 1;
+
         File file = new File(PRODUCTS_DB_PATH);
 
         try {
             FileWriter writer = new FileWriter(file, true);
 
-            writer.write(String.format("Name: %s, Price: %.2f\n",
-                    product.getName(), product.getPrice()));
+
+            writer.write(String.format("ID: %d, Name: %s, Price: %.2f\n",
+                    nextID, product.getName(), product.getPrice()));
             writer.close();
 
         } catch (IOException ex) {
@@ -49,9 +54,9 @@ public class ProductsRepo {
 
             Object productAsObj = new Product();
             Product product = (Product) productAsObj.getClass()
-                    .getConstructor(String.class, double.class)
+                    .getConstructor(int.class, String.class, double.class)
                     .newInstance(
-                            productMap.get("Name"), Double.parseDouble(productMap.get("Price")));
+                            Integer.parseInt(productMap.get("ID")), productMap.get("Name"), Double.parseDouble(productMap.get("Price")));
 
             productsMap.put(product.getName(), product);
 

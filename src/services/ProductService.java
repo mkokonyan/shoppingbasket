@@ -1,6 +1,6 @@
 package services;
 
-import controller.ProductController;
+import controller.AdminViewController;
 import entities.Product;
 import repository.ProductsRepo;
 import services.validators.ProductValidators;
@@ -27,7 +27,7 @@ public class ProductService {
 
             Helpers.printErrorMessage(ex);
 
-            return ProductController.showAdminMenu(Helpers.getScanner());
+            return AdminViewController.showAdminMenu(Helpers.getScanner());
 
         }
         Product product = new Product(name, price);

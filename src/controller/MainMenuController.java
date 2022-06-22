@@ -11,7 +11,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
 import java.util.Scanner;
 
-public class MenuController {
+public class MainMenuController {
     public static User showMainMenu(Scanner scanner) throws IOException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
 
         User user = null;
