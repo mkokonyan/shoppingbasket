@@ -79,7 +79,7 @@ Run Main.java class.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-![](images/ShoppingBasketMenuScheme.jpg)
+![](images/ShoppingBasketMenuScheme.jpeg)
 
 You can create new User account after filling register form in Main menu as well as adding new products when you are logged as Administrator.
 For convinience in testing the features you can use existing entities such as:
