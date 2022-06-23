@@ -4,11 +4,8 @@
 <br />
 <div align="center">
 
-<h3 align="center">Shopping Basket Task</h3>
+<h3 align="center">Shopping Basket</h3>
 
-  <p align="center">
-   TODO
-  </p>
 </div>
 
 
