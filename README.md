@@ -62,6 +62,16 @@ For convinience in testing the features you can use existing entities such as:
     - [ ] Username: Admin
     - [ ] Password: admin12345
 
+  * User account with big balance: 
+    - [ ] Username: mkk
+    - [ ] Password: 12345qwe
+
+  * User account with small balance: 
+    - [ ] Username: borisp
+    - [ ] Password: 12345qwe
+  
+  * Existing products
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
