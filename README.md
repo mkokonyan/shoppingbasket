@@ -5,6 +5,7 @@
 <div align="center">
 
 <h2 align="center">Shopping Basket</h2>
+<p>Console application which provides to regular user adding products to basket and purchasing them at the end </p>
 
 </div>
 
