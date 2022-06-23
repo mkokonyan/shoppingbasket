@@ -70,7 +70,7 @@
 ## Roadmap
 
 <!-- Main menu -->
-- [1] Login
+- [] Login
    
     <!-- Administrator menu -->
     - [ ] Admin role
