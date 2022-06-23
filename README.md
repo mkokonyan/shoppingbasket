@@ -83,15 +83,15 @@ For convinience in testing the features you can use existing entities such as:
 
 ## Roadmap
 
-<strong>-- Main menu --</strong>
+<strong>Main menu</strong>
 - [ ] Login
    
-    <strong>-- Administrator menu --</strong>
+    <strong>Administrator menu</strong>
     - [ ] Admin role
         - [ ] Add product to shop    
         - [ ] Exit  
    
-    <strong>-- User menu --</strong>
+    <strong>User menu</strong>
     - [ ] User role
         - [ ] Show products   
         - [ ] Add products to basket  
