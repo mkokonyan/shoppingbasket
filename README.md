@@ -38,9 +38,10 @@
 The application simulates small shop where there are two types of user roles: administrator role and regular user. Administrator can add products to the shop from which the customer can choose to buy. Regular user rights includes possibility to view all available products in the shop, to add products to the basket and purchase them and seeing actual balance.
 
 As a structure application follows Model-View-Controller architecture. The packages are divided as follows:
-- [ ] <strong>db package</strong>: This package act like database where the entities such as shop products, users and current logged user are saved.
-- [ ] <strong>entities package</strong>: Product and User classes are stored here with standard fields, constructors, getters and setters.
-- [ ] <strong>db</strong>: This package act like database where the entities such as shop products, users and current logged user are saved. 
+- [ ] <strong>db</strong>: This package act like database where the entities such as shop products, users and current logged user are saved.
+- [ ] <strong>entities</strong>: Product and User classes are stored here with standard fields, constructors, getters and setters.
+- [ ] <strong>repository</strong>: This package is responsible to persist new entities in db as well as read the existing ones and transofrm them in objects.
+- [ ] <strong>services</strong>: In this package bussines logic is implemented and contains <strong>validators</strong> package.
 
 
 
