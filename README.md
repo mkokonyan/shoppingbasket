@@ -86,7 +86,7 @@ For convinience in testing the features you can use existing entities such as:
 <strong>-- Main menu --</strong>
 - [ ] Login
    
-    <strong>-- Administrator menu --</strong>
+    <h3><strong>-- Administrator menu --</strong></h3>
     - [ ] Admin role
         - [ ] Add product to shop    
         - [ ] Exit  
