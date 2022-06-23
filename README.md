@@ -4,7 +4,7 @@
 <br />
 <div align="center">
 
-<h3 align="center">Shopping Basket</h3>
+<h2 align="center">Shopping Basket</h2>
 
 </div>
 
