@@ -22,7 +22,7 @@
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#installation">Installation</a></li>
+        <li><a href="#howtorun">How To Run</a></li>
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
@@ -45,7 +45,7 @@
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
-### Installation
+### How To Run
 
 Run Main.java class.
 
