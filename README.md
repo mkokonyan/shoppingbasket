@@ -83,7 +83,7 @@ For convinience in testing the features you can use existing entities such as:
 
 ## Roadmap
 
-<!-- Main menu -->
+-- Main menu --
 - [ ] Login
    
     <!-- Administrator menu -->
