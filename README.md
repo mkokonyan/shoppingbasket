@@ -79,6 +79,8 @@ Run Main.java class.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
+![](images/ShoppingBasketMenuScheme.jpg)
+
 You can create new User account after filling register form in Main menu as well as adding new products when you are logged as Administrator.
 For convinience in testing the features you can use existing entities such as:
  * Administrator account: 
@@ -98,6 +100,7 @@ For convinience in testing the features you can use existing entities such as:
     - [ ] Password: 12345qwe
   
   * Existing products
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
