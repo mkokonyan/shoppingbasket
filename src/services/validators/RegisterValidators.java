@@ -23,7 +23,7 @@ public class RegisterValidators {
             throw new IllegalArgumentException("Password must contain at least one lowercase letter");
         }
         if (!password.matches(".*[0-9].*")) {
-            throw new IllegalArgumentException("Password must contain at least one lowercase letter");
+            throw new IllegalArgumentException("Password must contain at least one digit");
         }
         if (password.matches(".*[\s].*")) {
             throw new IllegalArgumentException("Password must not have whitespace characters");
