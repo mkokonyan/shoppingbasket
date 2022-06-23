@@ -35,7 +35,7 @@
 
 
 ## About The Project
-![Welcome view][welcomeview-url]
+
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
