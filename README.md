@@ -35,7 +35,10 @@
 
 ## About The Project
 
-TODO
+The application simulates small shop where there are two types of user roles: administrator role and regular user. Administrator can add products to the shop from which the customer can choose to buy. Regular user rights includes possibility to view all available products in the shop, to add products to the basket and purchase them and seeing actual balance.
+
+
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
