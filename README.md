@@ -94,9 +94,6 @@
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
-
-
-
 ## Contact
 
 Martin Kokonyan - martin.kokonyan@paysafe.com - +359 883 346 727
