@@ -86,12 +86,12 @@ For convinience in testing the features you can use existing entities such as:
 <strong>-- Main menu --</strong>
 - [ ] Login
    
-    <!-- Administrator menu -->
+    <strong>-- Administrator menu --</strong>
     - [ ] Admin role
         - [ ] Add product to shop    
         - [ ] Exit  
    
-    <!-- User menu -->
+    <strong>-- User menu --</strong>
     - [ ] User role
         - [ ] Show products   
         - [ ] Add products to basket  
