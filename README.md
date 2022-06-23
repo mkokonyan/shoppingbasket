@@ -43,7 +43,10 @@ As a structure application follows Model-View-Controller architecture. The packa
 - [ ] <strong>repository</strong>: This package is responsible to persist new entities in db as well as read the existing ones and transofrm them in objects.
 - [ ] <strong>services</strong>: In this package bussines logic is implemented and contains <strong>validators</strong> package. Type of validators are as follows: 
     * Matching credentials (username and password) when trying to login
-    * Matching credentials (username and password) when trying to login
+    * Product name and username length validation. 
+    * Product name and username checking existence. 
+    * Product price and user amount data type validation.
+
 
 
 
