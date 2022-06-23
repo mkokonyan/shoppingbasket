@@ -37,6 +37,10 @@
 
 The application simulates small shop where there are two types of user roles: administrator role and regular user. Administrator can add products to the shop from which the customer can choose to buy. Regular user rights includes possibility to view all available products in the shop, to add products to the basket and purchase them and seeing actual balance.
 
+As a structure application follows Model-View-Controller architecture. The packages are divided as follows:
+- [ ] <strong>db</strong>: This package act like database where the entities such as shop products, users and current logged user are saved.
+
+
 
 
 
