@@ -41,11 +41,16 @@ As a structure application follows Model-View-Controller architecture. The packa
 - [ ] <strong>db</strong>: This package act like database where the entities such as shop products, users and current logged user are saved.
 - [ ] <strong>entities</strong>: Product and User classes are stored here with standard fields, constructors, getters and setters.
 - [ ] <strong>repository</strong>: This package is responsible to persist new entities in db as well as read the existing ones and transofrm them in objects.
-- [ ] <strong>services</strong>: In this package bussines logic is implemented and contains <strong>validators</strong> package. Type of validators are as follows: 
-    * Matching credentials (username and password) when trying to login
-    * Product name and username length validation. 
+- [ ] <strong>services</strong>: In this package bussines logic is implemented and contains <strong>validators</strong> package. Services are responsible to catch and handle validators. Type of validators are as follows: 
+    * Matching credentials (username and password) when trying to login.
+    * Product name, username and user's first name length validation. 
     * Product name and username checking existence. 
     * Product price and user amount data type validation.
+    * User password validate it's length, containing minimum one letter and digit and checking for whitespaces.
+- [ ] <strong>views</strong>: This package simulates different types of menus options in the console.
+- [ ] <strong>controller</strong>: Package implementing connection between <strong>services</strong> and <strong>views</strong> classes.
+- [ ] <strong>utls</strong>: Package which contains Helpers class with some helping methods.
+
 
 
 
