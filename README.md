@@ -51,7 +51,7 @@ As a structure application follows Model-View-Controller architecture. The packa
 - [ ] <strong>controller</strong>: Package implementing connection between <strong>services</strong> and <strong>views</strong> classes.
 - [ ] <strong>utls</strong>: Package which contains Helpers class with some helping methods.
 
-   -  <strong>Main.java</strong>: Application starting point.
+   - <strong>Main.java</strong>: Application starting point.
 
 
 
