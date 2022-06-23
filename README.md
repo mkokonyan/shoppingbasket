@@ -65,7 +65,7 @@ For convinience in testing the features you can use existing entities such as:
     - [ ] Password: admin12345
    
     <p>
-    <strong> Note that Admin account is always first and only entity in database </strong> 
+    <strong> Note that Admin account is always first and only entity with administrator rights in database </strong> 
     </p>
 
   * User account with big balance: 
