@@ -70,7 +70,7 @@ For convinience in testing the features you can use existing entities such as:
 ## Roadmap
 
 <!-- Main menu -->
-- [] Login
+- [ ] Login
    
     <!-- Administrator menu -->
     - [ ] Admin role
