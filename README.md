@@ -41,7 +41,8 @@ As a structure application follows Model-View-Controller architecture. The packa
 - [ ] <strong>db</strong>: This package act like database where the entities such as shop products, users and current logged user are saved.
 - [ ] <strong>entities</strong>: Product and User classes are stored here with standard fields, constructors, getters and setters.
 - [ ] <strong>repository</strong>: This package is responsible to persist new entities in db as well as read the existing ones and transofrm them in objects.
-- [ ] <strong>services</strong>: In this package bussines logic is implemented and contains <strong>validators</strong> package.
+- [ ] <strong>services</strong>: In this package bussines logic is implemented and contains <strong>validators</strong> package. Type of validators are as follows: 
+* Matching credentials (username and password) when trying to login
 
 
 
