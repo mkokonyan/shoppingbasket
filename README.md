@@ -36,8 +36,6 @@
 
 ## About The Project
 
-
-
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
@@ -51,7 +49,7 @@
 
 ### Installation
 
-1. Run Main.java class.
+Run Main.java class.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -60,7 +58,7 @@
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-
+TODO
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
