@@ -60,7 +60,7 @@ You can create new User account after filling register form in Main menu as well
 For convinience in testing the features you can use existing entities such as:
  * Administrator account: 
     - [ ] Username: Admin
-    - [ ]Password: admin12345
+    - [ ] Password: admin12345
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
