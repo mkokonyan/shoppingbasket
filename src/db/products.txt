@@ -1,0 +1,14 @@
+ID: 1, Name: Laptop, Price: 100.00
+ID: 2, Name: PC, Price: 200.00
+ID: 3, Name: Keyboard, Price: 20.00
+ID: 4, Name: Mouse, Price: 10.00
+ID: 5, Name: Headphones, Price: 40.00
+ID: 6, Name: Lamp, Price: 40.00
+ID: 7, Name: Charger, Price: 120.00
+ID: 8, Name: Mousepad, Price: 50.00
+ID: 9, Name: Printer, Price: 400.00
+ID: 10, Name: Scanner, Price: 200.00
+ID: 11, Name: SoundSystem, Price: 250.00
+ID: 12, Name: Joystick, Price: 40.00
+ID: 13, Name: Chair, Price: 550.00
+ID: 14, Name: Gamepad, Price: 120.00
