@@ -1,4 +1,0 @@
-Username: admin, Password: admin12345, First_name: Admin, Total_balance: 0.00, Products: []
-Username: mkk, Password: 12345qwe, First_name: Martin, Total_balance: 3890.00, Products: []
-Username: tkk, Password: 12345qwe, First_name: Tanya, Total_balance: 6000.00, Products: []
-Username: borisp, Password: 12345qwe, First_name: Boris, Total_balance: 10.00, Products: [Headphones]
