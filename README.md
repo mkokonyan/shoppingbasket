@@ -142,7 +142,7 @@ For convinience in testing the features you can use existing entities such as:
 
 ## Contact
 
-Martin Kokonyan - martin.kokonyan@paysafe.com - +359 883 346 727
+Martin Kokonyan - mkokonyan@gmail.com
 
 
 
